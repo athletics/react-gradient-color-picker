@@ -64,7 +64,6 @@ var Opacity = function () {
     var handleOpacity = function (x) {
         if (opacityRef.current) {
             var newO = (0, utils_js_1.getHandleValue)(x, opacityRef.current, barSize) / 100;
-            console.log(newO);
             var newColor = "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(newO, ")");
             handleChange(newColor);
         }
