@@ -17,19 +17,19 @@
     }
   },
   "scripts": {
-    "build": "pnpm build-js",
-    "build-js": "pnpm build-js-esm && pnpm build-js-cjs && pnpm build-js-cjs-package",
+    "build": "npm run build-js",
+    "build-js": "npm run build-js-esm && npm run build-js-cjs && npm run build-js-cjs-package",
     "build-js-esm": "tsc --project tsconfig.build.json --outDir dist/esm",
     "build-js-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs --moduleResolution node --verbatimModuleSyntax false",
     "build-js-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > dist/cjs/package.json",
     "clean": "rimraf dist",
     "format": "biome format",
     "lint": "biome lint",
-    "prepack": "pnpm clean && pnpm build",
-    "test": "pnpm lint && pnpm tsc && pnpm format && pnpm unit",
+    "prepack": "npm clean && npm run build",
+    "test": "npm lint && npm tsc && npm format && npm unit",
     "tsc": "tsc",
     "unit": "vitest",
-    "watch": "pnpm build-js-esm --watch & pnpm build-js-cjs --watch & node --eval"
+    "watch": "npm run build-js-esm --watch & npm run build-js-cjs --watch & node --eval"
   },
   "repository": {
     "type": "git",
@@ -50,13 +50,11 @@
   },
   "dependencies": {
     "html2canvas": "^1.4.1",
-    "lodash.throttle": "^4.1.1",
     "tinycolor2": "1.4.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
-    "@types/lodash.throttle": "*",
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "^19.1.2",
