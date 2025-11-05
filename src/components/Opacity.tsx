@@ -30,7 +30,6 @@ const Opacity = () => {
   const handleOpacity = (x: number) => {
     if (opacityRef.current) {
       const newO = getHandleValue(x, opacityRef.current, barSize) / 100
-      console.log(newO)
       const newColor = `rgba(${r}, ${g}, ${b}, ${newO})`
       handleChange(newColor)
     }
