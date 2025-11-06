@@ -21,10 +21,9 @@ var TrashIcon = function () {
         React.createElement("polyline", { strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign({}, styles), defaultStyles.rbgcpControlIcon), points: "17.96 4.31 2.04 4.3 3.75 4.3 4.81 17.29 5.16 17.96 5.74 18.47 6.59 18.62 13.64 18.62 14.52 18.32 15.07 17.68 15.29 17.12 16.28 4.3 12.87 4.3 12.87 2.38 12.48 1.75 11.83 1.46 8.4 1.46 7.64 1.68 7.26 2.21 7.16 2.52 7.17 4.23" })));
 };
 export default TrashIcon;
-export var LinearIcon = function (_a) {
-    var color = _a.color;
+export var LinearIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var styles = {
         fill: 'none',
         strokeWidth: '1.8px',
@@ -32,10 +31,9 @@ export var LinearIcon = function (_a) {
     return (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", style: { width: 14 } },
         React.createElement("polyline", { strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign(__assign({}, styles), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), points: "0.9 12.73 0.9 19.1 7.27 19.1 0.9 19.1 19.1 0.9 12.73 0.9 19.1 0.9 19.1 7.27" })));
 };
-export var RadialIcon = function (_a) {
-    var color = _a.color;
+export var RadialIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var styles = {
         fill: 'none',
         strokeMiterlimit: 10,
@@ -45,10 +43,9 @@ export var RadialIcon = function (_a) {
         React.createElement("circle", { style: __assign(__assign(__assign({}, styles), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), cx: "10", cy: "10", r: "9" }),
         React.createElement("circle", { style: __assign(__assign(__assign({}, styles), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), cx: "10", cy: "10", r: "5" })));
 };
-export var SlidersIcon = function (_a) {
-    var color = _a.color;
+export var SlidersIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var style1 = {
         fill: 'none',
         strokeWidth: '1.8px',
@@ -64,10 +61,9 @@ export var SlidersIcon = function (_a) {
         React.createElement("polyline", { fillRule: "evenodd", strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign(__assign({}, style1), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), points: "16.26 2.75 16.26 12.69 13.41 12.71 19.1 12.71" }),
         React.createElement("line", { strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign(__assign({}, style2), defaultStyles.rbgcpControlIcon), (col && { stroke: col, fill: col })), x1: "16.26", y1: "17.26", x2: "16.26", y2: "15.21" })));
 };
-export var InputsIcon = function (_a) {
-    var color = _a.color;
+export var InputsIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var style1 = {
         fill: 'none',
         strokeWidth: '1.8px',
@@ -77,10 +73,9 @@ export var InputsIcon = function (_a) {
         React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign(__assign({}, style1), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), d: "M7.57,5.73C6,5.7,4.5,5.65,3,5.77a2.28,2.28,0,0,0-1.76.74A2.3,2.3,0,0,0,.94,7.83l0,3.82A4.73,4.73,0,0,0,1,12.9a1.64,1.64,0,0,0,.68,1,2.44,2.44,0,0,0,1,.27,25,25,0,0,0,4.74.09" }),
         React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", style: __assign(__assign(__assign({}, style1), defaultStyles.rbgcpControlIcon), (col && { stroke: col })), d: "M12.43,14.32a44.12,44.12,0,0,0,4.6,0,2.24,2.24,0,0,0,1.76-.74,2.29,2.29,0,0,0,.27-1.32l0-3.81A4.81,4.81,0,0,0,19,7.15a1.62,1.62,0,0,0-.68-1,2.31,2.31,0,0,0-1-.28,26.8,26.8,0,0,0-4.74-.09" })));
 };
-export var PaletteIcon = function (_a) {
-    var color = _a.color;
+export var PaletteIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var style2 = {
         strokeMiterlimit: 10,
         strokeWidth: '0.5px',
@@ -92,10 +87,9 @@ export var PaletteIcon = function (_a) {
         React.createElement("circle", { style: __assign(__assign({}, defaultStyles.rbgcpControlIcon2), (col && { fill: col })), cx: "5.45", cy: "12.04", r: "1.71" }),
         React.createElement("path", { style: __assign(__assign(__assign(__assign({}, style2), defaultStyles.rbgcpControlIcon), defaultStyles.rbgcpControlIcon2), (col && { fill: col, stroke: col })), d: "M19.1,10c0,3.58-2.12,2.94-4.06,2.35-1.15-.34-2.24-.67-2.77-.08-.68.78-.54,2.07-.39,3.33.2,1.79.39,3.5-1.88,3.5A9.1,9.1,0,1,1,19.1,10ZM10,18c.7,0,.74-.19.75-.2a2.67,2.67,0,0,0,.07-1.27c0-.19,0-.42-.06-.67-.06-.53-.13-1.15-.14-1.67a3.82,3.82,0,0,1,.8-2.63,2.14,2.14,0,0,1,1.45-.7,4.36,4.36,0,0,1,1.32.12c.39.08.8.21,1.16.32h0c.39.12.74.23,1.08.3.74.17,1,.1,1.13,0S18,11.32,18,10a8,8,0,1,0-8,8Z" })));
 };
-export var DegreesIcon = function (_a) {
-    var color = _a.color;
+export var DegreesIcon = function () {
     var defaultStyles = usePicker().defaultStyles;
-    var col = color !== null && color !== void 0 ? color : '';
+    var col = 'currentColor';
     var style2 = {
         fill: 'none',
         strokeMiterlimit: 10,

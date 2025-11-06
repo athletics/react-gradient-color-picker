@@ -18,7 +18,7 @@ import EyeDropper from './EyeDropper.js';
 import AdvancedControls from './AdvancedControls.js';
 import ComparibleColors from './ComparibleColors.js';
 import GradientControls from './GradientControls.js';
-import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles } from '../styles/styles.js';
+import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles, } from '../styles/styles.js';
 var ColorTypeBtns = function (_a) {
     var _b, _c;
     var hideColorTypeBtns = _a.hideColorTypeBtns, setGradient = _a.setGradient, isGradient = _a.isGradient, setSolid = _a.setSolid, locales = _a.locales;
@@ -100,15 +100,15 @@ var Controls = function (_a) {
                     !hideAdvancedSliders && (React.createElement("div", { id: "rbgcp-advanced-btn".concat(pickerIdSuffix), onClick: function () { return setOpenAdvanced(!openAdvanced); }, 
                         // className="rbgcp-control-btn rbgcp-advanced-btn"
                         style: controlBtnStyles(openAdvanced, defaultStyles) },
-                        React.createElement(SlidersIcon, { color: openAdvanced ? '#568CF5' : '' }))),
+                        React.createElement(SlidersIcon, null))),
                     !hideColorGuide && (React.createElement("div", { style: controlBtnStyles(openComparibles, defaultStyles), onClick: function () { return setOpenComparibles(!openComparibles); }, 
                         // className="rbgcp-control-btn rbgcp-comparibles-btn"
                         id: "rbgcp-comparibles-btn".concat(pickerIdSuffix) },
-                        React.createElement(PaletteIcon, { color: openComparibles ? '#568CF5' : '' }))),
+                        React.createElement(PaletteIcon, null))),
                     !hideInputType && (React.createElement("div", { id: "rbgcp-color-model-btn".concat(pickerIdSuffix), onClick: function () { return setOpenInputType(!openInputType); }, 
                         // className="rbgcp-control-btn rbgcp-color-model-btn"
                         style: controlBtnStyles(openInputType, defaultStyles) },
-                        React.createElement(InputsIcon, { color: openInputType ? '#568CF5' : '' }),
+                        React.createElement(InputsIcon, null),
                         React.createElement(InputTypeDropdown, { openInputType: openInputType, setOpenInputType: setOpenInputType })))))),
             !hideAdvancedSliders && (React.createElement(AdvancedControls, { openAdvanced: openAdvanced })),
             !hideColorGuide && (React.createElement(ComparibleColors, { openComparibles: openComparibles })),

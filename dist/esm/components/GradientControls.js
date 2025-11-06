@@ -32,13 +32,13 @@ var GradientType = function () {
             style: __assign(__assign({}, defaultStyles.rbgcpControlBtn), (isLinear && defaultStyles.rbgcpControlBtnSelected)), tabIndex: 0, role: "button", onKeyDown: function () {
                 return;
             } },
-            React.createElement(LinearIcon, { color: isLinear ? '#568CF5' : '' })),
+            React.createElement(LinearIcon, null)),
         React.createElement("div", { onClick: handleRadial, id: "rbgcp-radial-btn".concat(pickerIdSuffix), 
             // className="rbgcp-control-icon-btn rbgcp-radial-btn"
             style: __assign(__assign({}, defaultStyles.rbgcpControlBtn), (isRadial && defaultStyles.rbgcpControlBtnSelected)), tabIndex: 0, role: "button", onKeyDown: function () {
                 return;
             } },
-            React.createElement(RadialIcon, { color: isRadial ? '#568CF5' : '' }))));
+            React.createElement(RadialIcon, null))));
 };
 var StopPicker = function () {
     var _a = usePicker(), currentLeft = _a.currentLeft, currentColor = _a.currentColor, defaultStyles = _a.defaultStyles, handleGradient = _a.handleGradient, pickerIdSuffix = _a.pickerIdSuffix;
@@ -88,7 +88,7 @@ var DeleteBtn = function () {
 var GradientControls = function (_a) {
     var hideGradientType = _a.hideGradientType, hideGradientAngle = _a.hideGradientAngle, hideGradientStop = _a.hideGradientStop;
     var _b = usePicker(), gradientType = _b.gradientType, defaultStyles = _b.defaultStyles, pickerIdSuffix = _b.pickerIdSuffix;
-    return (React.createElement("div", { style: __assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), { marginTop: 12, marginBottom: -4, justifyContent: 'space-between', paddingLeft: hideGradientType ? 4 : 0 }), id: "rbgcp-gradient-controls-wrap".concat(pickerIdSuffix) },
+    return (React.createElement("div", { style: __assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), { marginTop: 0, marginBottom: -4, justifyContent: 'space-between', paddingLeft: hideGradientType ? 4 : 0 }), id: "rbgcp-gradient-controls-wrap".concat(pickerIdSuffix) },
         !hideGradientType && React.createElement(GradientType, null),
         React.createElement("div", { style: { width: 53 } }, !hideGradientAngle && gradientType === 'linear-gradient' && (React.createElement(DegreePicker, null))),
         !hideGradientStop && React.createElement(StopPicker, null),

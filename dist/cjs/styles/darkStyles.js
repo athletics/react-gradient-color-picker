@@ -9,12 +9,12 @@ exports.darkStyles = {
         color: 'rgb(212, 212, 212)',
     },
     rbgcpControlBtnWrapper: {
-        background: 'rgb(54, 54, 54)',
+        background: '#3b3b3b',
     },
     rbgcpInput: {
         border: 'none',
         color: 'white',
-        background: 'rgb(54, 54, 54)',
+        background: '#3b3b3b',
     },
     rbgcpControlBtn: {
         color: 'rgb(212, 212, 212)',
@@ -29,8 +29,8 @@ exports.darkStyles = {
         color: 'white',
     },
     rbgcpControlBtnSelected: {
-        background: 'black',
-        color: '#568cf5',
+        background: '#202020',
+        color: '#F7F3A9',
     },
     rbgcpDegreeIcon: {
         color: 'rgb(212, 212, 212)',
@@ -40,5 +40,5 @@ exports.darkStyles = {
     },
     rbgcpComparibleLabel: {
         color: 'rgb(212, 212, 212)',
-    }
+    },
 };

@@ -41,7 +41,7 @@ const GradientType = () => {
           return
         }}
       >
-        <LinearIcon color={isLinear ? '#568CF5' : ''} />
+        <LinearIcon />
       </div>
       <div
         onClick={handleRadial}
@@ -57,7 +57,7 @@ const GradientType = () => {
           return
         }}
       >
-        <RadialIcon color={isRadial ? '#568CF5' : ''} />
+        <RadialIcon />
       </div>
     </div>
   )
@@ -151,8 +151,13 @@ const DegreePicker = () => {
 }
 
 const DeleteBtn = () => {
-  const { colors, selectedColor, createGradientStr, defaultStyles, pickerIdSuffix } =
-    usePicker()
+  const {
+    colors,
+    selectedColor,
+    createGradientStr,
+    defaultStyles,
+    pickerIdSuffix,
+  } = usePicker()
 
   const deletePoint = () => {
     if (colors?.length > 2) {
@@ -198,7 +203,7 @@ const GradientControls = ({
     <div
       style={{
         ...defaultStyles.rbgcpControlBtnWrapper,
-        marginTop: 12,
+        marginTop: 0,
         marginBottom: -4,
         justifyContent: 'space-between',
         paddingLeft: hideGradientType ? 4 : 0,

@@ -69,7 +69,7 @@ export const Handle = ({
           ...defaultStyles.rbgcpGradientHandle,
           ...(isSelected
             ? {
-                boxShadow: '0px 0px 5px 1px rgba(86, 140, 245,.95)',
+                boxShadow: 'rgba(0, 0, 0,.5) 0px 0px 3px',
                 border: '2px solid white',
               }
             : {}),

@@ -21,6 +21,10 @@ var Hue = function () {
     var barSize = config.barSize;
     usePaintHue(barRef, squareWidth);
     var hueRef = useRef(null);
+    var hcRef = useRef(hc);
+    useEffect(function () {
+        hcRef.current = hc;
+    }, [hc]);
     var stopDragging = function () {
         setDragging(false);
     };
@@ -28,12 +32,17 @@ var Hue = function () {
         setDragging(true);
     };
     var handleHue = function (x) {
+        var _a, _b;
         if (hueRef.current) {
             var newHue = getHandleValue(x, hueRef.current, barSize) * 3.6;
-            var tinyHsv = tinycolor({ h: newHue, s: hc === null || hc === void 0 ? void 0 : hc.s, v: hc === null || hc === void 0 ? void 0 : hc.v });
-            var _a = tinyHsv.toRgb(), r = _a.r, g = _a.g, b = _a.b;
-            handleChange("rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(hc.a, ")"));
-            setHc(__assign(__assign({}, hc), { h: newHue }));
+            var tinyHsv = tinycolor({
+                h: newHue,
+                s: (_a = hcRef.current) === null || _a === void 0 ? void 0 : _a.s,
+                v: (_b = hcRef.current) === null || _b === void 0 ? void 0 : _b.v,
+            });
+            var _c = tinyHsv.toRgb(), r = _c.r, g = _c.g, b = _c.b;
+            handleChange("rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(hcRef.current.a, ")"));
+            setHc(__assign(__assign({}, hcRef.current), { h: newHue }));
         }
     };
     var handleMove = function (e) {
@@ -73,7 +82,7 @@ var Hue = function () {
                 width: '18px',
                 height: '18px',
                 zIndex: 1000,
-                transition: 'all 10ms linear',
+                //transition: 'all 10ms linear',
                 position: 'absolute',
                 left: (hc === null || hc === void 0 ? void 0 : hc.h) * ((squareWidth - 18) / 360),
                 top: -2,

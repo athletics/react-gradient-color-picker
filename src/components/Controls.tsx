@@ -8,7 +8,11 @@ import AdvancedControls from './AdvancedControls.js'
 import ComparibleColors from './ComparibleColors.js'
 import GradientControls from './GradientControls.js'
 import { LocalesProps } from '../shared/types.js'
-import { colorTypeBtnStyles, controlBtnStyles, modalBtnStyles } from '../styles/styles.js'
+import {
+  colorTypeBtnStyles,
+  controlBtnStyles,
+  modalBtnStyles,
+} from '../styles/styles.js'
 
 const ColorTypeBtns = ({
   hideColorTypeBtns,
@@ -151,8 +155,15 @@ const Controls = ({
   hideGradientAngle?: boolean
   hideGradientStop?: boolean
 }) => {
-  const { config, onChange, isGradient, handleChange, previous, defaultStyles, pickerIdSuffix } =
-    usePicker()
+  const {
+    config,
+    onChange,
+    isGradient,
+    handleChange,
+    previous,
+    defaultStyles,
+    pickerIdSuffix,
+  } = usePicker()
   const { defaultColor, defaultGradient } = config
   const [openComparibles, setOpenComparibles] = useState(false)
   const [openInputType, setOpenInputType] = useState(false)
@@ -226,7 +237,7 @@ const Controls = ({
                   // className="rbgcp-control-btn rbgcp-advanced-btn"
                   style={controlBtnStyles(openAdvanced, defaultStyles)}
                 >
-                  <SlidersIcon color={openAdvanced ? '#568CF5' : ''} />
+                  <SlidersIcon />
                 </div>
               )}
               {!hideColorGuide && (
@@ -236,7 +247,7 @@ const Controls = ({
                   // className="rbgcp-control-btn rbgcp-comparibles-btn"
                   id={`rbgcp-comparibles-btn${pickerIdSuffix}`}
                 >
-                  <PaletteIcon color={openComparibles ? '#568CF5' : ''} />
+                  <PaletteIcon />
                 </div>
               )}
               {!hideInputType && (
@@ -246,7 +257,7 @@ const Controls = ({
                   // className="rbgcp-control-btn rbgcp-color-model-btn"
                   style={controlBtnStyles(openInputType, defaultStyles)}
                 >
-                  <InputsIcon color={openInputType ? '#568CF5' : ''} />
+                  <InputsIcon />
                   <InputTypeDropdown
                     openInputType={openInputType}
                     setOpenInputType={setOpenInputType}
@@ -274,4 +285,4 @@ const Controls = ({
   }
 }
 
-export default Controls;
+export default Controls

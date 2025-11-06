@@ -82,7 +82,7 @@ var Square = function () {
         setDragging(true);
         setComputedDragPos(e);
     };
-    return (React.createElement("div", { style: { position: 'relative', marginBottom: 12 }, id: "rbgcp-square-wrapper".concat(pickerIdSuffix) },
+    return (React.createElement("div", { style: { position: 'relative', marginBottom: 6 }, id: "rbgcp-square-wrapper".concat(pickerIdSuffix) },
         React.createElement("div", { onMouseUp: stopDragging, onTouchEnd: stopDragging, onMouseDown: handleCanvasDown, onTouchStart: handleCanvasDown, id: "rbgcp-square".concat(pickerIdSuffix), ref: squareRef, style: { position: 'relative', cursor: 'ew-cross' } },
             React.createElement("div", { style: __assign(__assign(__assign({}, defaultStyles.rbgcpHandle), { transform: "translate(".concat((_a = dragPos === null || dragPos === void 0 ? void 0 : dragPos.x) !== null && _a !== void 0 ? _a : 0, "px, ").concat((_b = dragPos === null || dragPos === void 0 ? void 0 : dragPos.y) !== null && _b !== void 0 ? _b : 0, "px)") }), (dragging ? { transition: '' } : {})), onMouseDown: handleMouseDown, id: "rbgcp-square-handle".concat(pickerIdSuffix) }),
             React.createElement("div", { style: __assign(__assign({}, defaultStyles.rbgcpCanvasWrapper), { height: squareHeight }), id: "rbgcp-square-canvas-wrapper".concat(pickerIdSuffix), onClick: function (e) { return handleClick(e); } },

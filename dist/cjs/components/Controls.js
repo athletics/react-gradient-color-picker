@@ -138,15 +138,15 @@ var Controls = function (_a) {
                     !hideAdvancedSliders && (react_1.default.createElement("div", { id: "rbgcp-advanced-btn".concat(pickerIdSuffix), onClick: function () { return setOpenAdvanced(!openAdvanced); }, 
                         // className="rbgcp-control-btn rbgcp-advanced-btn"
                         style: (0, styles_js_1.controlBtnStyles)(openAdvanced, defaultStyles) },
-                        react_1.default.createElement(icon_js_1.SlidersIcon, { color: openAdvanced ? '#568CF5' : '' }))),
+                        react_1.default.createElement(icon_js_1.SlidersIcon, null))),
                     !hideColorGuide && (react_1.default.createElement("div", { style: (0, styles_js_1.controlBtnStyles)(openComparibles, defaultStyles), onClick: function () { return setOpenComparibles(!openComparibles); }, 
                         // className="rbgcp-control-btn rbgcp-comparibles-btn"
                         id: "rbgcp-comparibles-btn".concat(pickerIdSuffix) },
-                        react_1.default.createElement(icon_js_1.PaletteIcon, { color: openComparibles ? '#568CF5' : '' }))),
+                        react_1.default.createElement(icon_js_1.PaletteIcon, null))),
                     !hideInputType && (react_1.default.createElement("div", { id: "rbgcp-color-model-btn".concat(pickerIdSuffix), onClick: function () { return setOpenInputType(!openInputType); }, 
                         // className="rbgcp-control-btn rbgcp-color-model-btn"
                         style: (0, styles_js_1.controlBtnStyles)(openInputType, defaultStyles) },
-                        react_1.default.createElement(icon_js_1.InputsIcon, { color: openInputType ? '#568CF5' : '' }),
+                        react_1.default.createElement(icon_js_1.InputsIcon, null),
                         react_1.default.createElement(InputTypeDropdown, { openInputType: openInputType, setOpenInputType: setOpenInputType })))))),
             !hideAdvancedSliders && (react_1.default.createElement(AdvancedControls_js_1.default, { openAdvanced: openAdvanced })),
             !hideColorGuide && (react_1.default.createElement(ComparibleColors_js_1.default, { openComparibles: openComparibles })),

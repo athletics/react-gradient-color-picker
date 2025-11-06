@@ -14,8 +14,13 @@ const Opacity = () => {
   } = usePicker()
   const [dragging, setDragging] = useState(false)
   const { r, g, b } = hc
-  const bg = `linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(${r},${g},${b},.5) 100%)`
+  const bg = `linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(${r},${g},${b},1) 100%)`
   const { barSize } = config
+
+  const hcRef = useRef(hc)
+  useEffect(() => {
+    hcRef.current = hc
+  }, [hc])
 
   const opacityRef = useRef<HTMLDivElement>(null)
 
@@ -29,6 +34,7 @@ const Opacity = () => {
 
   const handleOpacity = (x: number) => {
     if (opacityRef.current) {
+      const { r, g, b } = hcRef.current
       const newO = getHandleValue(x, opacityRef.current, barSize) / 100
       const newColor = `rgba(${r}, ${g}, ${b}, ${newO})`
       handleChange(newColor)

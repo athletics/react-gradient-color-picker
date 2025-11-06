@@ -30,10 +30,10 @@ const TrashIcon = () => {
 
 export default TrashIcon
 
-export const LinearIcon = ({ color }: ColorProps) => {
+export const LinearIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const styles = {
     fill: 'none',
     strokeWidth: '1.8px',
@@ -58,10 +58,10 @@ export const LinearIcon = ({ color }: ColorProps) => {
   )
 }
 
-export const RadialIcon = ({ color }: ColorProps) => {
+export const RadialIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const styles = {
     fill: 'none',
     strokeMiterlimit: 10,
@@ -97,10 +97,10 @@ export const RadialIcon = ({ color }: ColorProps) => {
   )
 }
 
-export const SlidersIcon = ({ color }: ColorProps) => {
+export const SlidersIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const style1 = {
     fill: 'none',
     strokeWidth: '1.8px',
@@ -191,10 +191,10 @@ export const SlidersIcon = ({ color }: ColorProps) => {
   )
 }
 
-export const InputsIcon = ({ color }: ColorProps) => {
+export const InputsIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const style1 = {
     fill: 'none',
     strokeWidth: '1.8px',
@@ -239,10 +239,10 @@ export const InputsIcon = ({ color }: ColorProps) => {
   )
 }
 
-export const PaletteIcon = ({ color }: ColorProps) => {
+export const PaletteIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const style2 = {
     strokeMiterlimit: 10,
     strokeWidth: '0.5px',
@@ -302,10 +302,10 @@ export const PaletteIcon = ({ color }: ColorProps) => {
   )
 }
 
-export const DegreesIcon = ({ color }: { color?: string }) => {
+export const DegreesIcon = () => {
   const { defaultStyles } = usePicker()
 
-  const col = color ?? ''
+  const col = 'currentColor'
   const style2 = {
     fill: 'none',
     strokeMiterlimit: 10,

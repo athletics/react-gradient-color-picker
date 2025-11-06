@@ -70,13 +70,13 @@ var GradientType = function () {
             style: __assign(__assign({}, defaultStyles.rbgcpControlBtn), (isLinear && defaultStyles.rbgcpControlBtnSelected)), tabIndex: 0, role: "button", onKeyDown: function () {
                 return;
             } },
-            react_1.default.createElement(icon_js_1.LinearIcon, { color: isLinear ? '#568CF5' : '' })),
+            react_1.default.createElement(icon_js_1.LinearIcon, null)),
         react_1.default.createElement("div", { onClick: handleRadial, id: "rbgcp-radial-btn".concat(pickerIdSuffix), 
             // className="rbgcp-control-icon-btn rbgcp-radial-btn"
             style: __assign(__assign({}, defaultStyles.rbgcpControlBtn), (isRadial && defaultStyles.rbgcpControlBtnSelected)), tabIndex: 0, role: "button", onKeyDown: function () {
                 return;
             } },
-            react_1.default.createElement(icon_js_1.RadialIcon, { color: isRadial ? '#568CF5' : '' }))));
+            react_1.default.createElement(icon_js_1.RadialIcon, null))));
 };
 var StopPicker = function () {
     var _a = (0, context_js_1.usePicker)(), currentLeft = _a.currentLeft, currentColor = _a.currentColor, defaultStyles = _a.defaultStyles, handleGradient = _a.handleGradient, pickerIdSuffix = _a.pickerIdSuffix;
@@ -126,7 +126,7 @@ var DeleteBtn = function () {
 var GradientControls = function (_a) {
     var hideGradientType = _a.hideGradientType, hideGradientAngle = _a.hideGradientAngle, hideGradientStop = _a.hideGradientStop;
     var _b = (0, context_js_1.usePicker)(), gradientType = _b.gradientType, defaultStyles = _b.defaultStyles, pickerIdSuffix = _b.pickerIdSuffix;
-    return (react_1.default.createElement("div", { style: __assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), { marginTop: 12, marginBottom: -4, justifyContent: 'space-between', paddingLeft: hideGradientType ? 4 : 0 }), id: "rbgcp-gradient-controls-wrap".concat(pickerIdSuffix) },
+    return (react_1.default.createElement("div", { style: __assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), { marginTop: 0, marginBottom: -4, justifyContent: 'space-between', paddingLeft: hideGradientType ? 4 : 0 }), id: "rbgcp-gradient-controls-wrap".concat(pickerIdSuffix) },
         !hideGradientType && react_1.default.createElement(GradientType, null),
         react_1.default.createElement("div", { style: { width: 53 } }, !hideGradientAngle && gradientType === 'linear-gradient' && (react_1.default.createElement(DegreePicker, null))),
         !hideGradientStop && react_1.default.createElement(StopPicker, null),

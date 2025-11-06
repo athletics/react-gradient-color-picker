@@ -52,8 +52,12 @@ var Opacity = function () {
     var _a = (0, context_js_1.usePicker)(), config = _a.config, _b = _a.hc, hc = _b === void 0 ? {} : _b, squareWidth = _a.squareWidth, handleChange = _a.handleChange, defaultStyles = _a.defaultStyles, pickerIdSuffix = _a.pickerIdSuffix;
     var _c = (0, react_1.useState)(false), dragging = _c[0], setDragging = _c[1];
     var r = hc.r, g = hc.g, b = hc.b;
-    var bg = "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(".concat(r, ",").concat(g, ",").concat(b, ",.5) 100%)");
+    var bg = "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(".concat(r, ",").concat(g, ",").concat(b, ",1) 100%)");
     var barSize = config.barSize;
+    var hcRef = (0, react_1.useRef)(hc);
+    (0, react_1.useEffect)(function () {
+        hcRef.current = hc;
+    }, [hc]);
     var opacityRef = (0, react_1.useRef)(null);
     var stopDragging = function () {
         setDragging(false);
@@ -63,8 +67,9 @@ var Opacity = function () {
     };
     var handleOpacity = function (x) {
         if (opacityRef.current) {
+            var _a = hcRef.current, r_1 = _a.r, g_1 = _a.g, b_1 = _a.b;
             var newO = (0, utils_js_1.getHandleValue)(x, opacityRef.current, barSize) / 100;
-            var newColor = "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(newO, ")");
+            var newColor = "rgba(".concat(r_1, ", ").concat(g_1, ", ").concat(b_1, ", ").concat(newO, ")");
             handleChange(newColor);
         }
     };

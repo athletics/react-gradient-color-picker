@@ -13,6 +13,10 @@ const Hue = () => {
   usePaintHue(barRef, squareWidth)
 
   const hueRef = useRef<HTMLDivElement>(null)
+  const hcRef = useRef(hc)
+  useEffect(() => {
+    hcRef.current = hc
+  }, [hc])
 
   const stopDragging = () => {
     setDragging(false)
@@ -25,10 +29,14 @@ const Hue = () => {
   const handleHue = (x: number) => {
     if (hueRef.current) {
       const newHue = getHandleValue(x, hueRef.current, barSize) * 3.6
-      const tinyHsv = tinycolor({ h: newHue, s: hc?.s, v: hc?.v })
+      const tinyHsv = tinycolor({
+        h: newHue,
+        s: hcRef.current?.s,
+        v: hcRef.current?.v,
+      })
       const { r, g, b } = tinyHsv.toRgb()
-      handleChange(`rgba(${r}, ${g}, ${b}, ${hc.a})`)
-      setHc({ ...hc, h: newHue })
+      handleChange(`rgba(${r}, ${g}, ${b}, ${hcRef.current.a})`)
+      setHc({ ...hcRef.current, h: newHue })
     }
   }
 
@@ -83,7 +91,7 @@ const Hue = () => {
           width: '18px',
           height: '18px',
           zIndex: 1000,
-          transition: 'all 10ms linear',
+          //transition: 'all 10ms linear',
           position: 'absolute',
           left: hc?.h * ((squareWidth - 18) / 360),
           top: -2,

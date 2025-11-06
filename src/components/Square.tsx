@@ -102,7 +102,7 @@ const Square = () => {
 
   return (
     <div
-      style={{ position: 'relative', marginBottom: 12 }}
+      style={{ position: 'relative', marginBottom: 6 }}
       id={`rbgcp-square-wrapper${pickerIdSuffix}`}
     >
       <div
