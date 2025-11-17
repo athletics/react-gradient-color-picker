@@ -107,7 +107,8 @@ const DegreePicker = () => {
   const { degrees, onChange, value, defaultStyles, pickerIdSuffix } =
     usePicker()
 
-  const handleDegrees = (newValue: any) => {
+  const handleDegrees = (changedValue: any) => {
+    const newValue = formatInputValues(changedValue, 0, 360)
     const remaining = value.split(/,(.+)/)[1]
     onChange(`linear-gradient(${newValue ?? 0}deg, ${remaining}`)
   }
