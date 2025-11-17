@@ -2,6 +2,7 @@ import React from 'react'
 import { usePicker } from '../context.js'
 import { formatInputValues, low, high } from '../utils/formatters.js'
 import { controlBtnStyles } from '../styles/styles.js'
+import { InteractiveInput } from '@designbyadrian/react-interactive-input'
 import TrashIcon, {
   LinearIcon,
   RadialIcon,
@@ -106,8 +107,7 @@ const DegreePicker = () => {
   const { degrees, onChange, value, defaultStyles, pickerIdSuffix } =
     usePicker()
 
-  const handleDegrees = (e: any) => {
-    const newValue = formatInputValues(e.target.value, 0, 360)
+  const handleDegrees = (newValue: any) => {
     const remaining = value.split(/,(.+)/)[1]
     onChange(`linear-gradient(${newValue ?? 0}deg, ${remaining}`)
   }
@@ -123,15 +123,18 @@ const DegreePicker = () => {
       id={`rbgcp-degree-input-wrapper${pickerIdSuffix}`}
     >
       <DegreesIcon />
-      <input
+      <InteractiveInput
         value={degrees}
-        onChange={(e) => handleDegrees(e)}
+        onChange={handleDegrees}
         id={`rbgcp-degree-input${pickerIdSuffix}`}
         // className="rbgcp-control-input rbgcp-degree-input"
         style={{
           ...defaultStyles.rbgcpControlInput,
           ...defaultStyles.rbgcpDegreeInput,
         }}
+        min={0}
+        max={360}
+        step={1}
       />
       <div
         // className="rbgcp-degree-circle-icon"

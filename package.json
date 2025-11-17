@@ -49,6 +49,7 @@
     "email": "hxfox1@gmail.com"
   },
   "dependencies": {
+    "@designbyadrian/react-interactive-input": "^2.0.3",
     "html2canvas": "^1.4.1",
     "tinycolor2": "1.4.2"
   },
