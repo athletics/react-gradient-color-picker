@@ -1,0 +1,10 @@
+import React from 'react';
+declare const TrashIcon: () => React.JSX.Element;
+export default TrashIcon;
+export declare const LinearIcon: () => React.JSX.Element;
+export declare const RadialIcon: () => React.JSX.Element;
+export declare const SlidersIcon: () => React.JSX.Element;
+export declare const InputsIcon: () => React.JSX.Element;
+export declare const PaletteIcon: () => React.JSX.Element;
+export declare const DegreesIcon: () => React.JSX.Element;
+export declare const StopIcon: () => React.JSX.Element;
