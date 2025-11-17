@@ -92,8 +92,8 @@ var StopPicker = function () {
 };
 var DegreePicker = function () {
     var _a = (0, context_js_1.usePicker)(), degrees = _a.degrees, onChange = _a.onChange, value = _a.value, defaultStyles = _a.defaultStyles, pickerIdSuffix = _a.pickerIdSuffix;
-    var handleDegrees = function (changedValue) {
-        var newValue = (0, formatters_js_1.formatInputValues)(changedValue, 0, 360);
+    var handleDegrees = function (e) {
+        var newValue = (0, formatters_js_1.formatInputValues)(e.target.value, 0, 360);
         var remaining = value.split(/,(.+)/)[1];
         onChange("linear-gradient(".concat(newValue !== null && newValue !== void 0 ? newValue : 0, "deg, ").concat(remaining));
     };
@@ -101,9 +101,10 @@ var DegreePicker = function () {
         // className="rbgcp-degree-input-wrap"
         style: __assign(__assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), defaultStyles.rbgcpControlInputWrap), defaultStyles.rbgcpDegreeInputWrap), id: "rbgcp-degree-input-wrapper".concat(pickerIdSuffix) },
         react_1.default.createElement(icon_js_1.DegreesIcon, null),
-        react_1.default.createElement(react_interactive_input_1.InteractiveInput, { value: degrees, onChange: handleDegrees, id: "rbgcp-degree-input".concat(pickerIdSuffix), 
+        react_1.default.createElement("input", { value: degrees, onChange: function (e) { return handleDegrees(e); }, id: "rbgcp-degree-input".concat(pickerIdSuffix), 
             // className="rbgcp-control-input rbgcp-degree-input"
-            style: __assign(__assign({}, defaultStyles.rbgcpControlInput), defaultStyles.rbgcpDegreeInput), min: 0, max: 360, step: 1 }),
+            style: __assign(__assign({}, defaultStyles.rbgcpControlInput), defaultStyles.rbgcpDegreeInput) }),
+        react_1.default.createElement(react_interactive_input_1.InteractiveInput, { value: degrees, onChange: function (v) { return console.log(v); }, min: 0, max: 360, step: 1 }),
         react_1.default.createElement("div", { 
             // className="rbgcp-degree-circle-icon"
             style: __assign(__assign({}, defaultStyles.rbgcpDegreeIcon), { position: 'absolute', right: degrees > 99 ? 0 : degrees < 10 ? 7 : 3, top: 1, fontWeight: 400, fontSize: 13 }) }, "\u00B0")));
