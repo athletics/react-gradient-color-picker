@@ -109,7 +109,7 @@ const DegreePicker = () => {
     usePicker()
 
   const handleDegrees = (e: any) => {
-    const newValue = formatInputValues(e.target.value, 0, 360)
+    const newValue = formatInputValues(e.target.value, -360, 360)
     const remaining = value.split(/,(.+)/)[1]
     onChange(`linear-gradient(${newValue ?? 0}deg, ${remaining}`)
   }
@@ -125,7 +125,7 @@ const DegreePicker = () => {
       id={`rbgcp-degree-input-wrapper${pickerIdSuffix}`}
     >
       <DegreesIcon />
-      <input
+      {/* <input
         value={degrees}
         onChange={(e) => handleDegrees(e)}
         id={`rbgcp-degree-input${pickerIdSuffix}`}
@@ -134,20 +134,29 @@ const DegreePicker = () => {
           ...defaultStyles.rbgcpControlInput,
           ...defaultStyles.rbgcpDegreeInput,
         }}
-      />
+      /> */}
       <InteractiveInput
-        value={degrees}
-        onChange={(v: any) => console.log(v)}
-        min={0}
+        value={Math.max(0, degrees)}
+        onChange={(e: any) => handleDegrees(e)}
+        min={-360}
         max={360}
         step={1}
+        style={{
+          ...defaultStyles.rbgcpControlInput,
+          ...defaultStyles.rbgcpDegreeInput,
+        }}
       />
       <div
         // className="rbgcp-degree-circle-icon"
         style={{
           ...defaultStyles.rbgcpDegreeIcon,
           position: 'absolute',
-          right: degrees > 99 ? 0 : degrees < 10 ? 7 : 3,
+          right:
+            degrees > 99 || degrees < -99
+              ? 0
+              : degrees < 10 && degrees > 0
+                ? 7
+                : 3,
           top: 1,
           fontWeight: 400,
           fontSize: 13,

@@ -55,7 +55,7 @@ var StopPicker = function () {
 var DegreePicker = function () {
     var _a = usePicker(), degrees = _a.degrees, onChange = _a.onChange, value = _a.value, defaultStyles = _a.defaultStyles, pickerIdSuffix = _a.pickerIdSuffix;
     var handleDegrees = function (e) {
-        var newValue = formatInputValues(e.target.value, 0, 360);
+        var newValue = formatInputValues(e.target.value, -360, 360);
         var remaining = value.split(/,(.+)/)[1];
         onChange("linear-gradient(".concat(newValue !== null && newValue !== void 0 ? newValue : 0, "deg, ").concat(remaining));
     };
@@ -63,13 +63,14 @@ var DegreePicker = function () {
         // className="rbgcp-degree-input-wrap"
         style: __assign(__assign(__assign({}, defaultStyles.rbgcpControlBtnWrapper), defaultStyles.rbgcpControlInputWrap), defaultStyles.rbgcpDegreeInputWrap), id: "rbgcp-degree-input-wrapper".concat(pickerIdSuffix) },
         React.createElement(DegreesIcon, null),
-        React.createElement("input", { value: degrees, onChange: function (e) { return handleDegrees(e); }, id: "rbgcp-degree-input".concat(pickerIdSuffix), 
-            // className="rbgcp-control-input rbgcp-degree-input"
-            style: __assign(__assign({}, defaultStyles.rbgcpControlInput), defaultStyles.rbgcpDegreeInput) }),
-        React.createElement(InteractiveInput, { value: degrees, onChange: function (v) { return console.log(v); }, min: 0, max: 360, step: 1 }),
+        React.createElement(InteractiveInput, { value: Math.max(0, degrees), onChange: function (e) { return handleDegrees(e); }, min: -360, max: 360, step: 1, style: __assign(__assign({}, defaultStyles.rbgcpControlInput), defaultStyles.rbgcpDegreeInput) }),
         React.createElement("div", { 
             // className="rbgcp-degree-circle-icon"
-            style: __assign(__assign({}, defaultStyles.rbgcpDegreeIcon), { position: 'absolute', right: degrees > 99 ? 0 : degrees < 10 ? 7 : 3, top: 1, fontWeight: 400, fontSize: 13 }) }, "\u00B0")));
+            style: __assign(__assign({}, defaultStyles.rbgcpDegreeIcon), { position: 'absolute', right: degrees > 99 || degrees < -99
+                    ? 0
+                    : degrees < 10 && degrees > 0
+                        ? 7
+                        : 3, top: 1, fontWeight: 400, fontSize: 13 }) }, "\u00B0")));
 };
 var DeleteBtn = function () {
     var _a = usePicker(), colors = _a.colors, selectedColor = _a.selectedColor, createGradientStr = _a.createGradientStr, defaultStyles = _a.defaultStyles, pickerIdSuffix = _a.pickerIdSuffix;
